@@ -1,0 +1,73 @@
+{
+  "site_name": "Ludwig Bedachung GmbH",
+  "branche": "Dachdecker",
+  "stadt": "Remseck am Neckar",
+  "telefon": "",
+  "email": "",
+  "adresse": "Vordere Str. 20/1, 70734 Fellbach 7,6 km",
+  "akzent": "#007BFF",
+  "fotos": [
+    "/static/img/gal_ph1.svg",
+    "/static/img/gal_ph2.svg",
+    "/static/img/gal_ph3.svg"
+  ],
+  "hero_image": "/static/img/hero.png",
+  "headline": "Sicherer Dachschutz für Remseck",
+  "subline": "Ludwig Bedachung: Zuverlässigkeit und Qualität.",
+  "ueber_titel": "Ludwig Bedachung GmbH - Ihr Fachmann für Dachdeckerarbeiten in Remseck am Neckar",
+  "ueber_text": "Als erfahrener Dachdeckermeisterbetrieb aus Remseck bieten wir individuelle Lösungen und erstklassige Qualität. Unsere Kunden profitieren von unserem umfassenden Wissen und der persönlichen Betreuung.",
+  "leistungen": [
+    {
+      "titel": "Dachrenovierung",
+      "text": "Sicherheits- und Funktionalitätsverbesserungen für Ihr Dach."
+    },
+    {
+      "titel": "Regenrinneinstallation",
+      "text": "Effektive Wasserableitung, um Schäden zu vermeiden."
+    },
+    {
+      "titel": "Dachpflege",
+      "text": "Regelmäßige Inspektionen und Pflegemaßnahmen zur Erhaltung."
+    }
+  ],
+  "cta_text": "Ihr Dach in bester Hand - Kontaktieren Sie uns jetzt!",
+  "seo_title": "Ludwig Bedachung GmbH | Zuverlässige Dachdecker in Remseck am Neckar",
+  "seo_desc": "Ludwig Bedachung GmbH bietet sicherheitsbewusste und qualitativ hochwertige Dachdienstleistungen für Remseck.",
+  "jahr": 2026,
+  "hero_source": "template",
+  "hero_template": "dachdecker.jpg",
+  "rechner": {
+    "titel": "Kostenrechner",
+    "untertitel": "Unverbindliche Sofort-Schätzung",
+    "posten": [
+      {
+        "name": "Dachreparatur",
+        "ab": 300,
+        "bis": 1500
+      },
+      {
+        "name": "Dachfenster einbauen",
+        "ab": 900,
+        "bis": 2500
+      },
+      {
+        "name": "Dachrinne erneuern",
+        "ab": 400,
+        "bis": 1400
+      },
+      {
+        "name": "Dachsanierung (komplett)",
+        "ab": 7000,
+        "bis": 28000
+      }
+    ],
+    "hinweis": "Grobe Orientierung — Ihr genaues, kostenloses Angebot erstellen wir nach kurzer Rücksprache."
+  },
+  "site_version": "1.0",
+  "font_display": "Fraunces",
+  "font_body": "Inter",
+  "taste_applied": true,
+  "about_image": "/static/img/about_ph.svg",
+  "placeholder_images": true,
+  "hero_refresh_version": 7
+}
