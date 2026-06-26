@@ -107,5 +107,9 @@
     "Individuelle Lösungen für jedes Problem",
     "Garantie auf alle Arbeiten"
   ],
-  "content_enriched": true
+  "content_enriched": true,
+  "makeover_stages": [
+    "lokal"
+  ],
+  "makeover_version": 7
 }
