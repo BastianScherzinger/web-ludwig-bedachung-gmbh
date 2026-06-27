@@ -28,7 +28,7 @@
         <a href="#kontakt">Kontakt</a>
         <a class="btn btn-sm" href="#kontakt" style="display:none" id="nav-cta-mobile">{{ c.cta_text }}</a>
       </nav>
-      <a class="btn btn-sm" href="#kontakt">{{ c.cta_text }}</a>
+      <a class="btn btn-sm" href="#kontakt">Angebot anfragen</a>
       <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -46,15 +46,15 @@
           <h1>{{ c.headline }}</h1>
           <p class="lead">{{ c.subline }}</p>
           <div class="hero-cta">
-            <a class="btn" href="#kontakt">{{ c.cta_text }}</a>
+            <a class="btn" href="#kontakt">Angebot anfragen</a>
             {% if c.whatsapp %}<a class="btn btn-wa" href="https://wa.me/{{ c.whatsapp }}?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Ihre%20Leistungen." target="_blank" rel="noopener"><svg class="ic-wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> WhatsApp</a>{% endif %}
             {% if c.email %}<a class="btn btn-ghost btn-on-dark" href="mailto:{{ c.email }}">E-Mail</a>{% endif %}
             {% if c.telefon %}<a class="btn btn-ghost btn-on-dark" href="tel:{{ c.telefon }}">{{ c.telefon }}</a>{% endif %}
           </div>
           <ul class="hero-trust">
-            <li>★★★★★ <span>Top bewertet in der Region</span></li>
-            <li><span>Schnell erreichbar &amp; termintreu</span></li>
-            {% if c.stadt %}<li><span>Persönlich vor Ort in {{ c.stadt }}</span></li>{% endif %}
+            <li class="hero-trust-stars">★★★★★ <span>Top bewertet in der Region</span></li>
+            <li>Schnell erreichbar &amp; termintreu</li>
+            {% if c.stadt %}<li>Persönlich vor Ort in {{ c.stadt }}</li>{% endif %}
           </ul>
         </div>
 
@@ -72,10 +72,10 @@
           </label>
           <div class="hr-result">
             <span class="hr-result-lbl">Geschätzte Kosten</span>
-            <span class="hr-result-val" id="hr-result">—</span>
+            <span class="hr-result-val" id="hr-result">-</span>
           </div>
           <a class="btn hr-cta" href="#kontakt">Genaues Angebot anfragen</a>
-          <p class="hr-note">{% if c.rechner.hinweis %}{{ c.rechner.hinweis }}{% else %}Grobe Orientierung — Ihr genaues Angebot ist kostenlos.{% endif %}</p>
+          <p class="hr-note">{% if c.rechner.hinweis %}{{ c.rechner.hinweis }}{% else %}Grobe Orientierung. Ihr genaues Angebot ist kostenlos.{% endif %}</p>
           {{ c.rechner|json_script:"rechner-data" }}
         </aside>
       </div>
@@ -86,12 +86,17 @@
     <section id="leistungen" class="section">
       <div class="wrap">
         <h2 class="section-t">Was wir für Sie tun</h2>
-        <p class="section-lead">Klare Leistungen, sauber ausgeführt — vom ersten Gespräch bis zur Abnahme.</p>
+        <p class="section-lead">Klare Leistungen, sauber ausgeführt. Vom ersten Gespräch bis zur Abnahme.</p>
         <div class="grid">
           {% for s in c.leistungen %}
           <article class="card">
             <div class="card-ic" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              {% if forloop.counter == 1 %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              {% elif forloop.counter == 2 %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              {% elif forloop.counter == 3 %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><path d="M20 2v4m0 0h-4m4 0-4-4"/></svg>
+              {% elif forloop.counter == 4 %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              {% else %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+              {% endif %}
             </div>
             <h3>{{ s.titel }}</h3>
             <p>{{ s.text }}</p>
@@ -116,6 +121,8 @@
         <div class="band-actions">
           {% if c.whatsapp %}<a class="btn btn-wa" href="https://wa.me/{{ c.whatsapp }}?text=Hallo%2C%20ich%20h%C3%A4tte%20gerne%20ein%20Angebot." target="_blank" rel="noopener"><svg class="ic-wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> WhatsApp schreiben</a>{% endif %}
           {% if c.telefon %}<a class="btn btn-light" href="tel:{{ c.telefon }}">☎ {{ c.telefon }}</a>{% endif %}
+          {% if c.email %}<a class="btn btn-ghost" href="mailto:{{ c.email }}">E-Mail schreiben</a>{% endif %}
+          {% if not c.whatsapp and not c.telefon and not c.email %}<a class="btn" href="#kontakt">Jetzt anfragen</a>{% endif %}
         </div>
       </div>
     </section>
@@ -129,14 +136,15 @@
           <span class="about-cap">{% if c.inhaber_name %}{{ c.inhaber_name }}{% else %}Inhaber{% endif %}</span>
         </div>
         <div class="about-body">
-          <h2 class="section-t">{{ c.ueber_titel }}</h2>
+          <h2 class="section-t">Über uns</h2>
+          <p class="section-lead">{{ c.ueber_titel }}</p>
           <p class="about-text">{{ c.ueber_text }}</p>
           <ul class="trust">
-            {% if c.trust %}{% for t in c.trust %}<li><span>{{ t }}</span></li>{% endfor %}
+            {% if c.trust %}{% for t in c.trust %}<li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>{{ t }}</span></li>{% endfor %}
             {% else %}
-            <li><strong>Regional</strong><span>aus {{ c.stadt|default:"Ihrer Region" }}</span></li>
-            <li><strong>Zuverlässig</strong><span>termintreu &amp; sauber</span></li>
-            <li><strong>Persönlich</strong><span>fester Ansprechpartner</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><strong>Regional</strong><span>aus {{ c.stadt|default:"Ihrer Region" }}</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><strong>Zuverlässig</strong><span>termintreu &amp; sauber</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><strong>Persönlich</strong><span>fester Ansprechpartner</span></li>
             {% endif %}
           </ul>
           <a class="btn btn-ghost" href="#kontakt">Lernen Sie uns kennen</a>
@@ -174,7 +182,7 @@
       <div class="wrap contact">
         <div class="contact-info">
           <h2 class="section-t">{{ c.cta_text }}</h2>
-          <p class="section-lead">Wir melden uns kurzfristig zurück — versprochen.</p>
+          <p class="section-lead">Wir melden uns kurzfristig zurück. Versprochen.</p>
           <ul class="contact-list">
             {% if c.telefon %}<li><span>Telefon</span><a href="tel:{{ c.telefon }}">{{ c.telefon }}</a></li>{% endif %}
             {% if c.whatsapp %}<li><span>WhatsApp</span><a href="https://wa.me/{{ c.whatsapp }}" target="_blank" rel="noopener">Nachricht senden</a></li>{% endif %}
@@ -228,11 +236,13 @@
     </div>
   </footer>
 
-  <!-- Mobiler Sticky-Kontaktbalken -->
+  <!-- Mobiler Sticky-Kontaktbalken (nur wenn Kontaktmöglichkeiten vorhanden) -->
+  {% if c.telefon or c.whatsapp %}
   <div class="mobilebar">
     {% if c.telefon %}<a href="tel:{{ c.telefon }}">☎ Anrufen</a>{% endif %}
     {% if c.whatsapp %}<a class="mb-wa" href="https://wa.me/{{ c.whatsapp }}" target="_blank" rel="noopener">WhatsApp</a>{% endif %}
   </div>
+  {% endif %}
 
   <script src="{% static 'js/kostenrechner.js' %}" defer></script>
   <script>

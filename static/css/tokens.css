@@ -12,5 +12,5 @@
 }
 body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif}
 h1,h2,h3,.brand,.section-t,.team-t,.band-t,.hr-title,.hr-result-val{font-family:"Fraunces","Iowan Old Style",Georgia,serif}
-.btn{background:var(--accent)}
-.btn:hover{background:var(--accent-dark)}
+.btn{background:var(--accent-dark)}
+.btn:hover{background:color-mix(in srgb,var(--accent-dark) 82%,#000)}
